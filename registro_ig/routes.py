@@ -1,14 +1,31 @@
 from registro_ig import app
-from flask import render_template
+import csv
+from flask import render_template, request,redirect
 
 
 @app.route("/")
 def index():
-    return render_template("index.html", pageTitle="Lista", movimientos=[])
+    fichero = open("data/movimientos.txt", "r")
+    csvReader = csv.reader(fichero,delimiter=",",quotechar='"')
+    movimientos = []
+    for movimiento in csvReader:
+        movimientos.append(movimiento)
+    
+    fichero.close()
+    return render_template("index.html", pageTitle="Lista", movements=movimientos)
 
-@app.route("/alta")
+@app.route("/alta", methods=["GET","POST"])
 def alta():
-    return render_template("new.html", pageTitle="Alta")
+    if request.method == "GET":
+        return render_template("new.html", pageTitle="Alta")
+    else:
+        fichero = open("data/movimientos.txt", "a", newline="")
+        csvWriter = csv.writer(fichero,delimiter=",", quotechar='"')
+
+        csvWriter.writerow([request.form["date"], request.form['concept'], request.form["quantity"]])
+        fichero.close()
+        return redirect("/")
+
 
 @app.route("/baja")
 def baja():
