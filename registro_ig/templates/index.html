@@ -10,6 +10,7 @@
                         <th>Fecha</th>
                         <th>Concepto</th>
                         <th>Cantidad</th>
+                        <th>Accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,6 +19,7 @@
                         <td>{{registro [0] }}</td>
                         <td>{{registro [1] }}</td>
                         <td>{{registro [2] }}€</td>
+                        <td><a href="/borrar/{{ registro[0] }}">Borrar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

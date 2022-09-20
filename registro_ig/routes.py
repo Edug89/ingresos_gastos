@@ -50,5 +50,9 @@ def validaFormulario(camposFormulario):
     
     return errores
 
+@app.route("/borrar/<int:id>", methods=["GET", "POST"])
+def borrar(id):
+    return f"Deberia borrar el registro {id}"
+
 
 
