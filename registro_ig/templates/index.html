@@ -16,9 +16,9 @@
                 <tbody>
                     {% for registro in movements %}
                     <tr>
-                        <td>{{registro [0] }}</td>
-                        <td>{{registro [1] }}</td>
-                        <td>{{registro [2] }}€</td>
+                        <td>{{ registro[1] }}</td>
+                        <td>{{ registro[2] }}</td>
+                        <td>{{ registro[3] }} €</td>
                         <td><a href="/borrar/{{ registro[0] }}">Borrar</a></td>
                     </tr>
                     {% endfor %}

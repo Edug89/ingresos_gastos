@@ -27,6 +27,7 @@ def alta():
         if not errores:
             fichero = open("data/movimientos.txt", "a", newline="")
             csvWriter = csv.writer(fichero, delimiter=",", quotechar='"')
+            #Hay que generar un nuevo ID parar cuando necesitemos manipular.
 
             csvWriter.writerow([request.form['date'], request.form['concept'], request.form['quantity']])
             fichero.close()
@@ -52,7 +53,7 @@ def validaFormulario(camposFormulario):
 
 @app.route("/borrar/<int:id>", methods=["GET", "POST"])
 def borrar(id):
-    return f"Deberia borrar el registro {id}"
+    return f"El registro que quieres borrar es el {id}"
 
 
 
