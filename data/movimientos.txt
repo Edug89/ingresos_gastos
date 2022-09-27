@@ -2,8 +2,7 @@
 3,06-01-2022,"Los padres, firmado: el banquero",100.0
 5,2022-09-01,limpieza nuevo,70
 6,2022-09-20,sd nuevo,50
-7,2022-09-20,prueba,100
+7,2022-09-22,prueba,100
 8,2022-09-21,60,0.01
-9,2022-09-21,prueba,-35
 10,2022-09-21,nuevoid,10
 11,2022-09-27,ultima prueba,1500
